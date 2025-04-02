@@ -16,6 +16,7 @@ def test_returns_attributes():
 
 
 def test_add_class():
+    # Arrange
     name = "Samara"
     grade = "junior"
     classes = [ "Pre-Calc", "English III", "World History", "Gym", "Chemistry", "Music Composition" ]
@@ -31,14 +32,44 @@ def test_add_class():
     assert samara.classes == new_classes # Is it necessary?
     assert len(samara.classes) == class_old_length + 1
 
+
 def test_get_num_classes():
-    
-    pass
+    # Arrange
+    name = "Samara"
+    grade = "junior"
+    classes = [ "Pre-Calc", "English III", "World History", "Gym", "Chemistry", "Music Composition" ]
+    classes_length = len(classes) # => 6
+
+    #Act
+    samara = Student(name, grade, classes)
+    number_classes = samara.get_num_classes()
+
+    # Assert
+    assert number_classes == 6 # classes_length
 
 
 def test_display_classes():
-    pass
+    # Arrange
+    name = "Samara"
+    grade = "junior"
+    classes = [ "Pre-Calc", "English III", "World History", "Gym", "Chemistry", "Music Composition" ]
+
+    #Act
+    samara = Student(name, grade, classes)
+    class_display_message = samara.display_classes()
+
+    #Assert
+    assert class_display_message == f"Pre-Calc, English III, World History, Gym, Chemistry, Music Composition"
 
 
 def test_summary():
-    pass
+    # Arrange
+    name = "Samara"
+    grade = "junior"
+    classes = [ "Pre-Calc", "English III", "World History", "Gym", "Chemistry", "Music Composition" ]
+
+    #Act
+    samara = Student(name, grade, classes)
+    summary_message = samara.summary()
+    #Assert
+    assert summary_message == f"Samara is a junior enrolled in 6 classes: Pre-Calc, English III, World History, Gym, Chemistry, Music Composition"
