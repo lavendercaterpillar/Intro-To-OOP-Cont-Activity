@@ -29,8 +29,8 @@ def test_add_class():
 
     #Assert
     assert new_classes == [ "Pre-Calc", "English III", "World History", "Gym", "Chemistry", "Music Composition","Physics"]
-    assert samara.classes == new_classes # Is it necessary?
-    assert len(samara.classes) == class_old_length + 1
+    assert samara.classes == # may be an expected result var instead; better to have independent # new_classes  # Is it necessary?
+    assert len(samara.classes) == class_old_length + 1 # the length is already checked on line 31
 
 
 def test_get_num_classes():
@@ -52,7 +52,7 @@ def test_display_classes():
     # Arrange
     name = "Samara"
     grade = "junior"
-    classes = [ "Pre-Calc", "English III", "World History", "Gym", "Chemistry", "Music Composition" ]
+    classes = [ "Pre-Calc", "English III", "World History", "Gym", "Chemistry", "Music Composition" ] # assuming the items are valid; 0, 1, and many items are key things to check
 
     #Act
     samara = Student(name, grade, classes)
